@@ -29,14 +29,14 @@ const fetchUsers = async (page: number): Promise<UsersResponse> => {
 const Users = () => {
   const [page, setPage] = useState(1)
 
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, error } = useQuery<UsersResponse, Error>({
     queryKey: ["users", page],
-    queryFn: () => fetchUsers(page),
-    keepPreviousData: true
+    queryFn: () => fetchUsers(page)
   })
 
   if (isLoading) return <h1>Loading...</h1>
   if (error) return <p>Error</p>
+  if (!data) return <h1>No Users Found</h1>
 
   return (
     <div>
