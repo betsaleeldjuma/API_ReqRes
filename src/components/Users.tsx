@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import Header from "./Header"
 import {motion} from 'framer-motion'
+import Footer from "./Footer"
 
 
 interface User {
@@ -71,14 +72,17 @@ const Users = () => {
           </motion.div>
         ))}
       </div>
-      <div style={{ marginTop: 20 }}>
-        <motion.button whileHover={{scale: 1.05}} onClick={() => setPage(old => Math.max(old - 1, 1))} disabled={page === 1} className="bg-[#C9D6DF] p-2 rounded-l-full">
-          Prev
-        </motion.button>
-        <motion.span initial={{y: -50, scale: 0.6}} whileInView={{y: 0, scale: 1}} style={{ margin: "0 10px" }} className="font-extrabold">Page {page}</motion.span>
-        <motion.button whileHover={{scale: 1.05}} onClick={() =>setPage(old => Math.min(old + 1, data.total_pages))} disabled={page === data.total_pages} className="bg-[#C9D6DF] p-2 rounded-r-full">
-          Next
-        </motion.button>
+      <div className="flex flex-col lg:flex-row gap-2" style={{ marginTop: 20 }}>
+        <motion.div initial={{x: -100, scale: 0.5}} whileInView={{x: 0, scale: 1}}>
+          <motion.button whileHover={{scale: 1.05}} onClick={() => setPage(old => Math.max(old - 1, 1))} disabled={page === 1} className="bg-[#C9D6DF] p-2 rounded-l-full">
+            Prev
+          </motion.button>
+          <motion.span initial={{y: -50, scale: 0.6}} whileInView={{y: 0, scale: 1}} style={{ margin: "0 10px" }} className="font-extrabold">Page {page}</motion.span>
+          <motion.button whileHover={{scale: 1.05}} onClick={() =>setPage(old => Math.min(old + 1, data.total_pages))} disabled={page === data.total_pages} className="bg-[#C9D6DF] p-2 rounded-r-full">
+            Next
+          </motion.button>
+        </motion.div>
+        <Footer />
       </div>
     </div>
   )
