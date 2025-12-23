@@ -21,7 +21,6 @@ interface UsersResponse {
   total: number
   total_pages: number
   data: User[]
-  filteredUsers: User[]
 }
 
 
