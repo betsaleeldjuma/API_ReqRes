@@ -72,7 +72,7 @@ const Users = () => {
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-col lg:flex-row gap-2" style={{ marginTop: 20 }}>
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-2" style={{ marginTop: 20 }}>
         <motion.div initial={{x: -100, scale: 0.5}} whileInView={{x: 0, scale: 1}}>
           <motion.button whileHover={{scale: 1.05}} onClick={() => setPage(old => Math.max(old - 1, 1))} disabled={page === 1} className="bg-[#C9D6DF] p-2 rounded-l-full">
             Prev
