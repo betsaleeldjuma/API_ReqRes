@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import Details from "./pages/Details"
-import Users from "./pages/Users"
+import Users from "./components/Users"
 
 const App = () => {
   return (
