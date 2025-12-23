@@ -3,8 +3,7 @@ import Users from "../components/Users"
 
 const Home = () => {
   return (
-    <div>
-        <Header />
+    <div className="text-[#1E2022]">
         <Users />
     </div>
   )

@@ -12,12 +12,10 @@ apiClient.interceptors.request.use(
   }
 )
 
-// Intercepteur réponse
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // action globale sur erreur 401
       console.log("Token invalide")
     }
     return Promise.reject(error)
