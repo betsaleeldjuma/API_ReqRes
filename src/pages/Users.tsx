@@ -40,7 +40,7 @@ const Users = () => {
 
   return (
     <div>
-      {data.data.map((user:User) => (
+      {data?.data.map((user:User) => (
         <div key={user.id}>
           <img src={user.avatar} />
           <h1>{user.first_name}</h1>
