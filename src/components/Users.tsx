@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import  apiClient from "../apiClient"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 
 interface User {
@@ -59,6 +60,7 @@ const Users = () => {
           <h1>{user.first_name}</h1>
           <p>{user.last_name}</p>
           <p>{user.email}</p>
+          <Link to={`/home/${user.id}`}>View description</Link>
         </div>
       ))}
       <div style={{ marginTop: 20 }}>

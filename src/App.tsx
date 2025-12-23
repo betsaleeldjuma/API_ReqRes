@@ -5,9 +5,9 @@ import Home from "./pages/Home"
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home"/>} />
+      <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/home/details/:id" element={<Details />}/>
+      <Route path="/home/:id" element={<Details />}/>
     </Routes>
   )
 }
